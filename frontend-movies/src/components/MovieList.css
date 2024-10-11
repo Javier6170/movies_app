@@ -1,28 +1,93 @@
-.card-img-top {
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-title {
-    font-weight: bold;
-  }
-  
-  .container {
-    padding-top: 20px;
-  }
-  
-  h1 {
+.container {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-radius: 10px; /* Bordes redondeados para la caja de contenido */
+    padding: 20px;
+}
+
+.title {
     font-family: 'Arial', sans-serif;
+    color: #343a40; /* Color oscuro para el título */
     font-weight: bold;
-  }
-  
-  
+    text-transform: uppercase; /* Títulos en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.search-input {
+    border-radius: 5px; /* Bordes redondeados para los campos de entrada */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff; /* Borde azul al enfocarse */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul al enfocar */
+}
+
+.filter-select {
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s;
+}
+
+.filter-select:focus {
+    border-color: #007bff; /* Borde azul al enfocarse */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul al enfocar */
+}
+
+.movie-card {
+    border: none; /* Sin borde en la tarjeta */
+    transition: transform 0.3s; /* Efecto de escala suave al pasar el mouse */
+}
+
+.movie-card:hover {
+    transform: translateY(-5px); /* Efecto de desplazamiento hacia arriba al pasar el mouse */
+}
+
+.movie-image {
+    height: 250px; /* Altura de la imagen */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior de la tarjeta */
+}
+
+.card-title {
+    font-weight: bold; /* Hacer el título más destacado */
+    font-size: 1.25rem; /* Tamaño de fuente más grande */
+    color: #212529; /* Color de texto oscuro */
+}
+
+.card-text {
+    color: #6c757d; /* Color gris para la descripción */
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none; /* Sin borde */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Resto de estilos existentes... */
+
+.add-movie-button {
+    position: fixed; /* Posicionarlo fijo en la pantalla */
+    bottom: 20px; /* A 20px del fondo */
+    right: 20px; /* A 20px de la derecha */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    border-radius: 100%; /* Hacer el botón circular */
+    display: flex; /* Para centrar el icono */
+    justify-content: center; /* Centrar el icono horizontalmente */
+    align-items: center; /* Centrar el icono verticalmente */
+    font-size: 24px; /* Tamaño del icono */
+    color: white; /* Color del icono */
+    background-color: #28a745; /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+.add-movie-button:hover {
+    background-color: #218838; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Escalar un poco al pasar el mouse */
+}

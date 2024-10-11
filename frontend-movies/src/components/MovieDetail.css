@@ -1,0 +1,45 @@
+.movie-detail {
+    background-size: cover;
+    color: black;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.img-container {
+    overflow: hidden; /* Asegurarse de que la imagen no se desborde */
+    height: 400px; /* Altura fija de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+.img-container img {
+    width: 100%; /* La imagen ocupará todo el ancho */
+    height: 100%; /* Altura de 600px establecida por el contenedor */
+    object-fit: cover; /* Mantiene la proporción de la imagen y la recorta si es necesario */
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom en la imagen */
+}
+
+.img-container:hover img {
+    transform: scale(1.05); /* Efecto de zoom en la imagen al hacer hover */
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.1rem; /* Tamaño de fuente mejorado */
+    margin-bottom: 15px;
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+    color: white; /* Cambiar el color del texto a blanco */
+}

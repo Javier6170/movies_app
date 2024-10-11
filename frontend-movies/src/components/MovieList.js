@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import StarRatingComponent from 'react-star-rating-component';
+import './MovieList.css'; // Importar el archivo CSS para estilos personalizados
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
@@ -61,20 +62,21 @@ function MovieList() {
     };
 
     return (
-        <div className="container mt-5">
-            <h1 className="text-center mb-4">Películas Disponibles</h1>
+        <div className="m-5">
+            <h1 className="text-center mb-4 title">Películas Disponibles</h1>
 
+            {/* Filtros de búsqueda */}
             <div className="row mb-4">
                 <div className="col-md-4">
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control search-input"
                         placeholder="Buscar por nombre"
                         onChange={handleNameChange}
                     />
                 </div>
                 <div className="col-md-4">
-                    <select className="form-select" onChange={handleRatingChange}>
+                    <select className="form-select filter-select" onChange={handleRatingChange}>
                         <option value="">Filtrar por Rating</option>
                         <option value="1">1 Estrella</option>
                         <option value="2">2 Estrellas</option>
@@ -86,20 +88,19 @@ function MovieList() {
                 <div className="col-md-4">
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control search-input"
                         placeholder="Filtrar por Categoría"
                         onChange={handleCategoryChange}
                     />
                 </div>
             </div>
 
-            <Link to="/movies/add" className="btn btn-success mb-4">Añadir Nueva Película</Link>
-
+            {/* Lista de películas */}
             <div className="row">
                 {filteredMovies.map(movie => (
                     <div key={movie.id} className="col-md-4 mb-4">
-                        <div className="card h-100 shadow-sm">
-                            <img src={movie.imagen} className="card-img-top" alt={movie.nombre} />
+                        <div className="card h-100 movie-card shadow-sm">
+                            <img src={movie.imagen} className="card-img-top movie-image" alt={movie.nombre} />
                             <div className="card-body">
                                 <h5 className="card-title">{movie.nombre}</h5>
                                 <p className="card-text">{movie.resumen.slice(0, 100)}...</p>
@@ -119,6 +120,11 @@ function MovieList() {
                     </div>
                 ))}
             </div>
+
+            {/* Botón de añadir nueva película flotante */}
+            <Link to="/movies/add" className="btn btn-success add-movie-button">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+            </Link>
         </div>
     );
 }

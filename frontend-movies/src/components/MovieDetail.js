@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import StarRatingComponent from 'react-star-rating-component';  // Importar la librería de estrellas
-
+import './MovieDetail.css';  // Importar estilos personalizados
 
 function MovieDetail() {
     const { id } = useParams();
@@ -37,24 +37,32 @@ function MovieDetail() {
     }
 
     return (
-        <div className="container mt-5">
-            <div className="row">
-                <div className="col-md-6">
+        <div>
+            <div className="movie-detail">
+                {/* Imagen de la película en la parte superior */}
+                <div className="img-container">
                     <img src={movie.imagen} alt={movie.nombre} className="img-fluid rounded" />
                 </div>
-                <div className="col-md-6">
-                    <h1>{movie.nombre}</h1>
-                    <p>{movie.resumen}</p>
 
+                {/* Contenido de la película */}
+                <div className="movie-info container">
+                    <h1>{movie.nombre}</h1>
+                    <p className="description">{movie.resumen}</p>
                     <p><strong>Categoría:</strong> {movie.categoria}</p>
+
                     {/* Mostrar las estrellas de rating */}
                     <StarRatingComponent
                         name="rating"
                         starCount={5}
                         value={movie.rating}
+                        editing={false} // Deshabilitar la edición del rating
                     />
+
                     {/* Botones de acciones */}
                     <div className="mt-3">
+                        <button className="btn btn-secondary me-2" onClick={() => navigate(-1)}>
+                            Volver
+                        </button>
                         <button className="btn btn-warning me-2" onClick={() => navigate(`/movies/edit/${movie.id}`)}>
                             Editar
                         </button>
