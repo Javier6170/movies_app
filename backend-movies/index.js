@@ -25,6 +25,15 @@ app.use(express.json());
 sequelize.authenticate()
     .then(() => {
         console.log('Conexión a la base de datos exitosa');
+        // Sincronizar modelos con la base de datos
+        sequelize.sync({ force: false })  // Cambia 'force' a 'true' si quieres recrear las tablas
+            .then(() => {
+                console.log('Tablas sincronizadas en la base de datos');
+            })
+            .catch(err => {
+                console.error('Error al sincronizar la base de datos:', err);
+            });
+
     })
     .catch(err => {
         console.error('Error al conectar con la base de datos:', err);

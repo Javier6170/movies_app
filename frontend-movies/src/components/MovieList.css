@@ -1,0 +1,28 @@
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .container {
+    padding-top: 20px;
+  }
+  
+  h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+  }
+  
+  
