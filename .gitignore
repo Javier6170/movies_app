@@ -12,8 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 log/
 
-# dotenv environment variables
-.env
 
 # MacOS files
 .DS_Store
